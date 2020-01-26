@@ -22,14 +22,14 @@ export default function AvatarInput() {
         path: 'dataset.file',
       });
     }
-  }, [ref, registerField]);
+  }, [ref]); //eslint-disable-line
 
   async function handleChange(e) {
     const data = new FormData();
 
     data.append('file', e.target.files[0]);
 
-    const response = await api.post('/files', data);
+    const response = await api.post('files', data);
 
     const { id, url } = response.data;
 
